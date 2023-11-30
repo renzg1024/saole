@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base:'/saole',
+  base:'/saole/',
   title: "My Awesome Project",
   description: "我的个人博客",
   lastUpdated: true,
