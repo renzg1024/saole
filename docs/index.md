@@ -15,11 +15,14 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
+  - icon: ⚡️
+    title: 这里是功能区 1
+    details: 这里是功能区 1 详情信息
+  - icon: 🔥
+    title: 这里是功能区 2
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
+  - icon: 🔧
+    title: 这里是功能区 3
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
