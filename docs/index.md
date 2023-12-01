@@ -20,7 +20,7 @@ features:
     details: 这里是功能区 1 详情信息
   - icon: 🔥
     title: 这里是功能区 2
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: 警惕知识错觉，反复观看后仍然要多实操方可真正掌握知识
   - icon: 🔧
     title: 这里是功能区 3
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
