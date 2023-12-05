@@ -28,7 +28,8 @@ export default defineConfig({
         text: 'Examples',
         items: [
           { text: 'Markdown Examples', link: '/examples/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/examples/api-examples' }
+          { text: 'Runtime API Examples', link: '/examples/api-examples' },
+          { text: 'sshkey.md', link: '/examples/sshkey' },
         ],
         collapsible: true,
         collapsed: true
