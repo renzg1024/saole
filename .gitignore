@@ -1,6 +1,4 @@
-/coverage
-/src/client/shared.ts
-/src/node/shared.ts
+
 *.log
 .DS_Store
 .idea
@@ -12,3 +10,5 @@ pnpm-global
 TODOs.md
 .temp
 *.tgz
+.vitepress/cache
+.vitepress/dist
