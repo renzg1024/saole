@@ -1,22 +1,14 @@
 # Sample workflow for building and deploying a VitePress site to GitHub Pages
 #
-name: GitHub Actions Build and Deploy
+name: Deploy VitePress site to Pages
 
 on:
   # Runs on pushes targeting the `main` branch. Change this to `master` if you're
   # using the `master` branch as the default branch.
   push:
     branches: [main]
-    # 只在下列路径变更时触发
-    paths:
-      - 'docs/**'
-      - 'package.json'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# 设置上海时区
-env:
-  TZ: Asia/Shanghai
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -37,9 +29,11 @@ jobs:
     steps:
       # 拉取代码
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          persist-credentials: false
+          fetch-depth: 0 # Not needed if lastUpdated is not enabled
+          # - uses: pnpm/action-setup@v2 # Uncomment this if you're using pnpm
+          # - uses: oven-sh/setup-bun@v1 # Uncomment this if you're using Bun
 
       # 安装 pnpm
       - name: Install pnpm
@@ -61,8 +55,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build Site
-        run: pnpm run build:github
+      - name: Build with VitePress
+        run: |
+          pnpm run build:github # or pnpm docs:build / yarn docs:build / bun run docs:build
+          touch docs/.vitepress/dist/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
