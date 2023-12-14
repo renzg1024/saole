@@ -1,6 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
+layoutClass: 'm-home-layout'
 
 hero:
   name: "志行"
@@ -8,20 +9,16 @@ hero:
   tagline: 记录自己对成长蜕变
   image:
     src: /xingzhi-logo.png
-    alt: VitePress
+    alt: 前端志行
   actions:
-    - theme: brand
-      text: 前端笔记
+    - text: 前端笔记
       link: /markdown-examples
-    - theme: alt
-      text: 前端导航
-      link: /api-examples
-    - theme: brand
-      text: 前端导航
-      link: /api-examples
+    - text: 前端导航
+      link: /nav/
+      theme: alt
 
 features:
-  - icon: ⚡️ 🧭
+  - icon: 🧭
     title: 前端导航
     details: 这里是功能区 1 详情信息<br/>啊看手机电话卡接受的
   - icon: 🔥

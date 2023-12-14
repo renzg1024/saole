@@ -1,18 +1,39 @@
 {
   "name": "saole",
-  "version": "1.0.0",
-  "description": "saoleblog",
-  "main": "index.js",
-  "author": "renzg",
-  "license": "MIT",
   "type": "module",
+  "version": "1.0.0",
+  "description": "saole个人前端博客",
+  "author": "renzg1024",
+  "license": "MIT",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
+    "build:github": "cross-env APP_BASE_PATH=/saole/ vitepress build docs",
     "docs:serve": "vitepress serve docs --port 9527",
     "docs:preview": "vitepress preview docs"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renzg1024/saole.git"
+  },
   "devDependencies": {
-    "vitepress": "^1.0.0-rc.31"
+    "@types/node": "^20.10.4",
+    "vitepress": "^1.0.0-rc.31",
+    "@femm/prettier": "^1.1.0",
+    "@femm/verify-commit": "^1.0.1",
+    "@mdit-vue/shared": "^0.12.1",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "medium-zoom": "^1.0.8",
+    "prettier": "^2.8.8",
+    "sass": "^1.69.4",
+    "vue": "^3.3.4"
+  },
+  "prettier": "@femm/prettier",
+  "lint-staged": {
+    "*.{js,jsx,tsx,vue,css,scss,less,md,json}": [
+      "prettier --write"
+    ]
   }
 }
