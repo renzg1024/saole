@@ -1,6 +1,4 @@
----
-layout: page
 
-this is nav
 
----
+# nav index 
+
