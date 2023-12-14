@@ -1,7 +1,6 @@
 ---
 layout: page
 
-# hello world
+this is nav
 
 ---
-
