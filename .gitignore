@@ -30,7 +30,7 @@ scripts/docsearch-scraper
 
 # log and lock files
 *.log
-yarn.lock
+#yarn.lock
 package-lock.json
 npm-debug.log*
 yarn-debug.log*
