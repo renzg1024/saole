@@ -13,23 +13,15 @@
 node_modules
 
 # compiled output
-dist
-dist-dev
 build
-cache
-.cache
 .temp
 .tmp
-.turbo
-/dist
-/cache
-.vitepress/cache
-.vitepress/dist
-scripts/docsearch-scraper
-
+dist
+cache
 
 # log and lock files
 *.log
+*.tgz
 #yarn.lock
 package-lock.json
 npm-debug.log*
