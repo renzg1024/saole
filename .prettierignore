@@ -1,5 +1,5 @@
 # See https://github.com/prettier/prettier/blob/main/docs/ignore.md
-
+# 用于 .prettierignore 完全忽略（即不重新格式化）某些文件和文件夹。
 # dependencies
 node_modules
 

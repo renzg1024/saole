@@ -10,7 +10,9 @@
     "docs:build": "vitepress build docs",
     "build:github": "cross-env APP_BASE_PATH=/saole/ vitepress build docs",
     "docs:serve": "vitepress serve docs --port 9527",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "prepare": "husky install",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,7 @@
 # http://editorconfig.org
+# EditorConfig 有助于为跨不同编辑器和 IDE 处理同一项目的多个开发人员保持一致的编码风格。
+# EditorConfig 项目由用于定义编码样式的文件格式和文本编辑器插件集合组成，
+# 这些插件使编辑器能够读取文件格式并遵循定义的样式。EditorConfig 文件易于阅读，并且与版本控制系统配合得很好。
 
 root = true
 
