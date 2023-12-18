@@ -27,13 +27,13 @@ export default {
 
     if (typeof window !== 'undefined') {
       watch(
-          () => router.route.data.relativePath,
-          () =>
-              updateHomePageStyle(
-                  /* /vitepress-nav-template/ 是为了兼容 GitHub Pages */
-                  location.pathname === '/' || location.pathname === '/vitepress-nav-template/',
-              ),
-          { immediate: true },
+        () => router.route.data.relativePath,
+        () =>
+          updateHomePageStyle(
+            /* /vitepress-nav-template/ 是为了兼容 GitHub Pages */
+            location.pathname === '/' || location.pathname === '/vitepress-nav-template/',
+          ),
+        { immediate: true },
       )
     }
   },

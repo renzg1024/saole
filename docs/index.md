@@ -4,8 +4,8 @@ layout: home
 layoutClass: 'm-home-layout'
 
 hero:
-  name: "志行"
-  text: "前端开发博客"
+  name: '志行'
+  text: '前端开发博客'
   tagline: 记录自己对成长蜕变
   image:
     src: /xingzhi-logo.png
@@ -28,4 +28,3 @@ features:
     title: 这里是功能区 3
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-

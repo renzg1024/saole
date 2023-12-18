@@ -12,6 +12,7 @@ const props = defineProps<{
   link: NavLink['link']
 }>()
 
+//跟 VitePress 一样使用 @mdit-vue/shared 中的 slugify 方法对 title 进行格式化
 const formatTitle = computed(() => {
   if (!props.title) {
     return ''
@@ -37,6 +38,7 @@ const svg = computed(() => {
             onerror="this.parentElement.style.display='none'"
           />
         </div>
+<!--        Algolia 默认爬取的是 .content 下的 h1 - h5, li, p，而我们的 MNavLink 组件使用的是 h6，为了支持其爬取修改为 h5 即可-->
         <h5 v-if="title" :id="formatTitle" class="title">{{ title }}</h5>
       </div>
       <p v-if="desc" class="desc">{{ desc }}</p>
