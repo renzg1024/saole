@@ -1,0 +1,63 @@
+{
+  "/guide/": [
+    {
+      "key": "guide",
+      "text": "Guide",
+      "items": [
+        {
+          "text": "Index",
+          "link": "/guide/"
+        },
+        {
+          "text": "started",
+          "link": "/guide/getting-started"
+        },
+        {
+          "text": "what",
+          "link": "/guide/what-is-vitepress"
+        },
+        {
+          "text": "test",
+          "link": "/guide/test"
+        }
+      ]
+    },
+    {
+      "key": "zhiguo",
+      "text": "zhiguo",
+      "items": [
+        {
+          "text": "Index",
+          "link": "/zhiguo/"
+        },
+        {
+          "text": "started",
+          "link": "/zhiguo/getting-started"
+        },
+        {
+          "text": "what",
+          "link": "/zhiguo/what-is-vitepress"
+        }
+      ]
+    }
+  ],
+  "/examples/": [
+    {
+      "text": "Examples",
+      "items": [
+        {
+          "text": "Index",
+          "link": "/examples/"
+        },
+        {
+          "text": "api",
+          "link": "/examples/api-examples"
+        },
+        {
+          "text": "markdown",
+          "link": "/examples/markdown-examples"
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import type { NavLink } from './components/type'
+import type {NavLink} from './components/type'
 
 type NavData = {
   title: string
@@ -33,6 +33,22 @@ export const NAV_DATA: NavData[] = [
         desc: '个人知识文档仓库',
         link: 'https://www.yuque.com/dashboard/books',
       },
+      {
+        icon: 'https://m4.publicimg.browser.qq.com/publicimg/nav/qbtool/footer-logo.png',
+        title: '帮小忙',
+        desc: '腾讯在线工具箱平台',
+        link: 'https://tool.browser.qq.com/',
+      },
+      {
+        icon: 'https://products.aspose.app/pdf/apps-ui/content/pwa/aspose512.png',
+        title: 'WORD转HTML',
+        desc: '免费在线将DOCX转换为HTML',
+        link: 'https://products.aspose.app/pdf/zh/conversion/word-to-html',
+      },
+      {
+        title: '网易邮箱',
+        link: 'https://products.aspose.app/pdf/zh/conversion/word-to-html',
+      },
     ],
   },
   {
@@ -56,6 +72,98 @@ export const NAV_DATA: NavData[] = [
         desc: '阮一峰的网络日志',
         link: 'http://es6.ruanyifeng.com',
       },
+      {
+        icon: 'https://www.zhangxinxu.com/favicon.ico',
+        title: 'CSS新世界',
+        desc: '张鑫旭的个人主页',
+        link: 'https://www.zhangxinxu.com/',
+      },
+      {
+        // icon: 'https://www.zhangxinxu.com/favicon.ico',
+        title: '山月前端课程',
+        // desc: '张鑫旭的个人主页',
+        link: 'https://q.shanyue.tech/',
+      },
+    ],
+  },
+  {
+    title: '社区',
+    items: [
+      {
+        icon: 'http://cxy521.com/static/img/favicon.ico',
+        title: '程序员导航-CXY521',
+        desc: '一个面向开源及私有软件项目的托管平台',
+        link: 'http://cxy521.com/',
+      },
+      {
+        icon: 'https://github.githubassets.com/assets/apple-touch-icon-144x144-b882e354c005.png',
+        title: 'Github',
+        desc: '一个面向开源及私有软件项目的托管平台',
+        link: 'https://github.com',
+      },
+      {
+        icon: 'https://gitee.com/favicon.ico',
+        title: 'Gitee',
+        desc: '国内软件项目的托管平台',
+        link: 'https://gitee.com/',
+      },
+      {
+        icon: 'https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a',
+        title: 'Stack Overflow',
+        desc: '全球最大的技术问答网站',
+        link: 'https://stackoverflow.com',
+      },
+      {
+        title: '稀土掘金',
+        icon: 'https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/apple-touch-icon.png',
+        desc: '面向全球中文开发者的技术内容分享与交流平台',
+        link: 'https://juejin.cn',
+      },
+      {
+        title: '云社区-华为云',
+        icon: 'https://bbs.huaweicloud.com/favicon.ico',
+        // desc: '面向全球中文开发者的技术内容分享与交流平台',
+        link: 'https://bbs.huaweicloud.com/blogs/109349',
+      },
+      {
+        title: 'V2EX',
+        icon: 'https://www.v2ex.com/static/icon-192.png',
+        desc: 'V2EX = way to explore',
+        link: 'https://www.v2ex.com',
+      },
+      {
+        title: '知乎',
+        icon: 'https://static.zhihu.com/heifetz/assets/apple-touch-icon-60.362a8eac.png',
+        desc: '知乎内容平台',
+        link: 'https://www.zhihu.com/signin?next=%2F',
+      },
+    ],
+  },
+  {
+    title: '综合学科资料',
+    items: [
+      {
+        icon: 'https://edu-image.nosdn.127.net/32a8dd2a-b9aa-4ec9-abd5-66cd8751befb.png?imageView&quality=100',
+        title: '中国大学MOOC',
+        desc: '(慕课)_国家精品课程在线学习平台',
+        link: 'https://www.icourse163.org/',
+      },
+      {
+        icon: 'https://speechling.com/static/images/favicons/favicon-32x32.png',
+        title: 'speechling',
+        desc: '学习新语言的免费工具组合',
+        link: 'https://speechling.com/zh/tools',
+      },
+      {
+        title: 'ESL Podcast Blog',
+        desc: '',
+        link: 'https://www.eslpod.com/eslpod_blog/',
+      },
+      {
+        title: 'Gutenberg',
+        desc: 'a library free eBooks',
+        link: 'https://gutenberg.org/',
+      },
     ],
   },
   {
@@ -74,6 +182,36 @@ export const NAV_DATA: NavData[] = [
         // link: 'https://github.com/SortableJS/Sortable',
       },
     ],
+  },
+  {
+    title: 'CSS 相关',
+    items: [
+      {
+        icon: 'https://animate.style/img/favicon.ico',
+        title: 'Animate.css',
+        desc: 'Just-add-water CSS animations',
+        link: 'https://animate.style/',
+        // link: 'https://github.com/animate-css/animate.css',
+      },
+      {
+        icon: 'https://postcss.org/assets/logo-3e39b0aa.svg',
+        title: 'PostCSS',
+        desc: '一个用 JavaScript 转换 CSS 的工具',
+        link: 'https://postcss.org',
+      },
+      {
+        icon: 'https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg',
+        title: 'Sass',
+        desc: '一个成熟，稳定，功能强大的专业级 CSS 扩展语言',
+        link: 'https://sass-lang.com',
+      },
+      {
+        icon: 'https://www.tailwindcss.cn/apple-touch-icon.png',
+        title: 'TailwindCSS 中文网',
+        desc: '一个功能类优先的 CSS 框架',
+        link: 'https://www.tailwindcss.cn',
+      },
+    ]
   },
   {
     title: '小程序相关',
@@ -112,6 +250,18 @@ export const NAV_DATA: NavData[] = [
         title: 'Vue3 生态导航',
         desc: 'Vue爱好者共同搭建',
         link: 'https://vue3js.cn/',
+      },
+      {
+        icon: 'https://avatars.githubusercontent.com/u/68583457?s=48&v=4',
+        title: 'Element Plus',
+        desc: '基于 Vue 3，面向设计师和开发者的组件库',
+        link: 'https://element-plus.org/zh-CN/',
+      },
+      {
+        icon: '/icons/vuehook-logo.svg',
+        title: 'VueHook Plus',
+        desc: 'Vue3 的 Hooks',
+        link: 'https://inhiblab-core.gitee.io/docs/hooks/',
       },
     ],
   },
@@ -291,6 +441,64 @@ export const NAV_DATA: NavData[] = [
     ],
   },
   {
+    title: 'AI 导航',
+    items: [
+      {
+        icon: '/icons/chatgpt.png',
+        title: 'ChatGPT',
+        link: 'https://chat.openai.com/chat',
+      },
+      {
+        icon: 'https://www.notion.so/images/logo-ios.png',
+        title: 'Notion AI（笔记）',
+        link: 'https://www.notion.so',
+      },
+      {
+        icon: 'https://www.midjourney.com/apple-touch-icon.png',
+        title: 'Midjourney（绘画）',
+        link: 'https://www.midjourney.com',
+      },
+      {
+        icon: 'https://global-uploads.webflow.com/59deb588800ae30001ec19c9/5d4891e0e260e3c1bc37b100_beautiful%20ai%20favicon%20%20blue%20square.png',
+        title: 'Beautiful.ai（PPT）',
+        link: 'https://www.beautiful.ai',
+      },
+      {
+        title: 'AI 导航',
+        link: 'https://ai.nancheng.fun/',
+      },
+    ],
+  },
+  {
+    title: '站点生成器',
+    items: [
+      {
+        icon: 'https://vitepress.dev/vitepress-logo-mini.svg',
+        title: 'VitePress',
+        desc: '由 Vite 和 Vue 驱动的静态网站生成器',
+        link: 'https://vitepress.dev',
+      },
+      {
+        icon: 'https://cn.vuejs.org/logo.svg',
+        title: 'VuePress',
+        desc: 'Vue 驱动的静态网站生成器',
+        link: 'https://vuepress.vuejs.org/zh',
+      },
+      {
+        icon: 'https://gw.alipayobjects.com/zos/bmw-prod/d3e3eb39-1cd7-4aa5-827c-877deced6b7e/lalxt4g3_w256_h256.png',
+        title: 'dumi',
+        desc: '基于 Umi 为组件研发而生的静态站点框架',
+        link: 'https://d.umijs.org',
+      },
+      {
+        icon: 'https://docusaurus.io/zh-CN/img/docusaurus.ico',
+        title: 'Docusaurus',
+        desc: '基于 React 的静态网站生成器',
+        link: 'https://docusaurus.io/zh-CN',
+      },
+    ],
+  },
+  {
     title: '可视化',
     items: [
       {
@@ -352,41 +560,6 @@ export const NAV_DATA: NavData[] = [
     ],
   },
   {
-    title: '社区',
-    items: [
-      {
-        icon: 'https://github.githubassets.com/assets/apple-touch-icon-144x144-b882e354c005.png',
-        title: 'Github',
-        desc: '一个面向开源及私有软件项目的托管平台',
-        link: 'https://github.com',
-      },
-      {
-        icon: 'https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a',
-        title: 'Stack Overflow',
-        desc: '全球最大的技术问答网站',
-        link: 'https://stackoverflow.com',
-      },
-      {
-        title: '稀土掘金',
-        icon: 'https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/apple-touch-icon.png',
-        desc: '面向全球中文开发者的技术内容分享与交流平台',
-        link: 'https://juejin.cn',
-      },
-      {
-        title: 'V2EX',
-        icon: 'https://www.v2ex.com/static/icon-192.png',
-        desc: 'V2EX = way to explore',
-        link: 'https://www.v2ex.com',
-      },
-      {
-        title: '知乎',
-        icon: 'https://static.zhihu.com/heifetz/assets/apple-touch-icon-60.362a8eac.png',
-        desc: '知乎内容平台',
-        link: 'https://www.zhihu.com/signin?next=%2F',
-      },
-    ],
-  },
-  {
     title: '图标库',
     items: [
       {
@@ -406,6 +579,58 @@ export const NAV_DATA: NavData[] = [
         title: 'Emoji searcher',
         desc: 'Emoji 表情大全',
         link: '',
+      },
+    ],
+  },
+  {
+    title: '休闲放松',
+    items: [
+      {
+        icon: 'https://qwerty.fe-mm.com/favicon.ico',
+        title: 'Qwerty Learner',
+        desc: '英语单词肌肉练习利器',
+        link: 'https://qwerty.fe-mm.com/',
+      },
+      {
+        icon: 'https://momoyu.cc/icon-192.png',
+        title: '摸摸鱼热榜',
+        // desc: '聚合每日热门、搞笑、有趣、适合摸鱼的资讯',
+        link: 'https://momoyu.cc',
+      },
+      {
+        icon: '',
+        title: '翻墙后看什么',
+        link: 'https://fanqianghou.com/',
+      },
+      {
+        icon: 'https://v.qq.com/favicon.ico',
+        title: '腾讯视频',
+        // desc: '中国领先的在线视频媒体平台，海量高清视频在线观看',
+        link: 'https://v.qq.com',
+      },
+      {
+        icon: 'https://static.hdslb.com/mobile/img/512.png',
+        title: '哔哩哔哩',
+        // desc: '',
+        link: 'https://www.bilibili.com',
+      },
+      {
+        icon: 'https://www.youtube.com/s/desktop/014dbbed/img/favicon_48x48.png',
+        title: 'YouTube',
+        // desc: '',
+        link: 'https://www.youtube.com',
+      },
+      {
+        icon: '/icons/twitter.svg',
+        title: 'Twitter',
+        // desc: '',
+        link: 'https://twitter.com',
+      },
+      {
+        icon: '/icons/pixiv.png',
+        title: 'Pixiv',
+        // desc: '',
+        link: 'https://www.pixiv.net',
       },
     ],
   },

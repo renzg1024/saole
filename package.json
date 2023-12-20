@@ -6,6 +6,7 @@
   "author": "renzg1024",
   "license": "MIT",
   "scripts": {
+    "create": "node ./scripts/index.js",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "build:github": "cross-env APP_BASE_PATH=/saole/ vitepress build docs",

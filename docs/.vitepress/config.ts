@@ -17,7 +17,7 @@ export default defineConfig({
   },
   /* 主题配置 */
   themeConfig: {
-    logo: 'https://cdn.jsdelivr.net/gh/renzg1024/resource/images/apple_003.jpg',
+    logo: '/horse-logo.png',
     nav,
     sidebar,
     /* 右侧大纲配置 */

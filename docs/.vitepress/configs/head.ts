@@ -2,7 +2,7 @@ import type { HeadConfig } from 'vitepress'
 
 export const head: HeadConfig[] = [
   ['meta', { name: 'keywords', content: 'HTML, CSS, JavaScript' }],
-  ['link', { rel: 'icon', href: '/saole/favicon.ico' }],
+  ['link', { rel: 'icon', href: '/favicon.ico' }],
   ['link', { rel: 'mask-icon', href: '/favicon.ico', color: '#3eaf7c' }],
   ['meta', { name: 'theme-color', content: '#3eaf7c' }],
   ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
