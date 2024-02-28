@@ -12,6 +12,7 @@
 
 import fs from 'fs'
 import path from 'path'
+import http from 'http'
 const proPath = path.resolve(process.cwd(), './')
 const dirPath = '/docs/guide'
 const updateFilePath = 'docs/.vitepress/configs/sidebar.json'
@@ -33,7 +34,7 @@ function getFileContentStr(filePath) {
 //
 // console.log(config_str,'--config_str')
 
-function updateJSONFile(filePath, {key,route}) {
+export function updateJSONFile(filePath, {key,route}) {
   try {
     console.log(`正在读取 ${filePath} 计划修改：`, {key,route})
     const readStr = getFileContentStr(filePath)
@@ -57,16 +58,24 @@ function updateJSONFile(filePath, {key,route}) {
 
 const route =  { "text": "test", "link": "/guide/test" }
 
-//3. fs.writeFile 写入文件（会覆盖之前的内容）（文件不存在就创建） utf8参数可以省略
-fs.writeFile(`${proPath}${dirPath}/test.md`,'# hello nodejs',function(error){
-  if(error){
-    console.log(error);
-    return false;
-  }
-  console.log('写入成功');
-  updateJSONFile(updateFilePath,{key:"guide",route})
+export const writeMdFile = function (docPath) {
+  // `${proPath}${dirPath}/test.md`
+   return new Promise((resolve, reject)=>{
+    fs.writeFile(`${docPath}`,'# hello nodejs',function(error){
+      if(error){
+        console.log(error);
+        return false;
+      }
+      console.log('写入成功');
+      resolve('更新成功')
+      // updateJSONFile(updateFilePath,{key:"guide",route})
 
-})
+    })
+  })
+
+}
+//3. fs.writeFile 写入文件（会覆盖之前的内容）（文件不存在就创建） utf8参数可以省略
+
 
 /*所以在文件指定位置更新内容
 * 先读取文件内容，查询到指定位置，更新内容，再把内容重新写入到文件中*/

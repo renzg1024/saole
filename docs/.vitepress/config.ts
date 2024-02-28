@@ -6,7 +6,7 @@ import { head, nav, sidebar } from './configs'
 export default defineConfig({
   base: process.env.APP_BASE_PATH || '/',
   lang: 'zh-CN',
-  title: '知行合一',
+  title: '察哈尔国', //
   description: '我的博客',
   head,
   lastUpdated: true,
