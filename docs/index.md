@@ -8,7 +8,7 @@ hero:
   text: '前端开发技术，个人思想感悟'
   tagline: 柳比歇夫时间统计法，费曼学习法推崇者
   image:
-    src: /xingzhi-logo.png
+    src: /zjk.png
     alt: 前端志行
   actions:
     - text: 前端笔记

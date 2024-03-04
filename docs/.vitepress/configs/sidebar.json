@@ -19,54 +19,6 @@
         {
           "text": "test",
           "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
-        },
-        {
-          "text": "test",
-          "link": "/guide/test"
         }
       ]
     },
@@ -104,6 +56,57 @@
         {
           "text": "markdown",
           "link": "/examples/markdown-examples"
+        }
+      ]
+    }
+  ],
+  "/mindGrowUp/understandNotes/": [
+    {
+      "text": "2023年",
+      "items": [
+        {
+          "text": "1月-每月核心表达",
+          "link": "/mindGrowUp/understandNotes/year-2023/January"
+        },
+        {
+          "text": "2月-每月核心表达",
+          "link": "/examples/api-examples"
+        },
+        {
+          "text": "3月-每月核心表达",
+          "link": "/examples/markdown-examples"
+        }
+      ]
+    },
+    {
+      "text": "2024年",
+      "items": [
+        {
+          "text": "1月-每月核心表达",
+          "link": "/examples/"
+        },
+        {
+          "text": "2月-每月核心表达",
+          "link": "/examples/api-examples"
+        },
+        {
+          "text": "3月-每月核心表达",
+          "link": "/examples/markdown-examples"
+        }
+      ]
+    }
+  ],
+  "/mindGrowUp/readNotes/": [
+    {
+      "text": "2023年",
+      "items": [
+        {
+          "text": "《柳比歇夫》",
+          "link": "/mindGrowUp/understandNotes/year-2023/January"
+        },
+        {
+          "text": "《费曼学习法》",
+          "link": "/examples/api-examples"
         }
       ]
     }
