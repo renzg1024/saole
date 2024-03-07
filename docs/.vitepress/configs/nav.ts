@@ -43,7 +43,7 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '心智成长',
     items: [
-      {text: '感悟杂记', link: '/mindGrowUp/understandNotes/'}, //数量多，日期，记录日常感悟，所思所想
+      {text: '思考感悟', link: '/mindGrowUp/understandNotes/'}, //数量多，日期，记录日常感悟，所思所想
       // 年分组，月为单位记录
       {text: '读书笔记', link: '/mindGrowUp/readNotes/'},
     ],

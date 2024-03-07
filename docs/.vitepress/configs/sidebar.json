@@ -70,11 +70,15 @@
         },
         {
           "text": "2月-每月核心表达",
-          "link": "/examples/api-examples"
+          "link": "/mindGrowUp/understandNotes/year-2023/February"
         },
         {
           "text": "3月-每月核心表达",
-          "link": "/examples/markdown-examples"
+          "link": "/mindGrowUp/understandNotes/year-2023/March"
+        },
+        {
+          "text": "4月-每月核心表达",
+          "link": "/mindGrowUp/understandNotes/year-2023/April"
         }
       ]
     },
@@ -84,21 +88,13 @@
         {
           "text": "1月-每月核心表达",
           "link": "/examples/"
-        },
-        {
-          "text": "2月-每月核心表达",
-          "link": "/examples/api-examples"
-        },
-        {
-          "text": "3月-每月核心表达",
-          "link": "/examples/markdown-examples"
         }
       ]
     }
   ],
   "/mindGrowUp/readNotes/": [
     {
-      "text": "2023年",
+      "text": "2024年",
       "items": [
         {
           "text": "《柳比歇夫》",
@@ -107,6 +103,14 @@
         {
           "text": "《费曼学习法》",
           "link": "/examples/api-examples"
+        },
+        {
+          "text": "《认知觉醒》",
+          "link": "/mindGrowUp/readNotes/renzhijuexing"
+        },
+        {
+          "text": "思维模型",
+          "link": "/mindGrowUp/readNotes/thinkingModel"
         }
       ]
     }
