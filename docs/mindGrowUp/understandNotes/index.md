@@ -2,8 +2,8 @@
 
 1.[一月总结](/mindGrowUp/understandNotes/year-2023/January)
 
-2.[二月总结](/understandNotes/year-2023/February)
+2.[二月总结](/mindGrowUp/understandNotes/year-2023/February)
 
-3.[三月总结](https://renzg1024.github.io/saole/mindGrowUp/understandNotes/year-2023/March)
+3.[三月总结](/mindGrowUp/understandNotes/year-2023/March)
 
-4.[四月总结](https://renzg1024.github.io/saole/mindGrowUp/understandNotes/year-2023/April)
+4.[四月总结](/mindGrowUp/understandNotes/year-2023/April)
