@@ -3,41 +3,57 @@ import type {DefaultTheme} from 'vitepress'
 export const nav: DefaultTheme.Config['nav'] = [
   {text: '前端导航', link: '/nav/'},
   {
-    text: '前端基础', //front end basic
+    text: '前端基础',
     items: [
-      {text: 'TypeScript', link: '/FrontEndBasic/TypeScript/'},
-      {text: 'Html', link: '/guide/'},
-      {text: 'CSS', link: '/guide/'},
-      {text: 'JavaScript', link: '/guide/'},
-      {text: 'ES6', link: '/guide/'},
-      {text: '编程逻辑算法题', link: '/guide/'},
-      {text: '浏览器网络相关', link: '/guide/'},
+      {text: 'TypeScript', link: '/frontEndBasic/typeScript/'},
+      {text: 'Html', link: '/frontEndBasic/html'},
+      {text: 'CSS', link: '/frontEndBasic/css'},
+      {text: 'JavaScript', link: '/frontEndBasic/javaScript'},
+      {text: 'ES6', link: '/frontEndBasic/es6'},
+      {text: '编程逻辑算法题', link: '/frontEndBasic/coding'},
+      {text: '浏览器网络相关', link: '/frontEndBasic/network'},
+    ],
+    activeMatch: '^/frontEndBasic'
+  },
+  {
+    text: '工作中实用',
+    items: [
+      {
+        text: 'JS功能库',
+        items: [
+          { text: 'npm功能库', link: '/workflow/utils/library' },
+          { text: '正则', link: '/workflow/utils/regexp' },
+          { text: '工具函数', link: '/workflow/utils/function' }
+        ]
+      },
+      {
+        text: 'CSS实用集',
+        items: [
+          { text: '常用技巧', link: '/workflow/css/spec' },
+          { text: '特效/动画', link: '/workflow/css/tricks' },
+          { text: 'Sass', link: '/workflow/sass/' }
+        ]
+      },
+      {text: 'Vue开发技巧', link: '/guide/'},
       {text: 'git', link: '/guide/'},
+      {text: '命令行', link: '/guide/'}, //npm命令nvm pnpm 相关等等
+      {text: '编程规范', link: '/guide/'},
+      {text: '踩坑记录 issue ', link: '/guide/'},
     ],
   },
   {
-    text: '常用技巧', //front end basic
-    items: [
-      {text: '工具库', link: '/FrontEndasic/TypeScript/'},
-      {text: '正则', link: '/guide/'},
-      {text: 'JS常用功能', link: '/guide/'},
-      {text: 'Vue开发技巧', link: '/guide/'},
-      {text: 'npm命令', link: '/guide/'},//nvm pnpm 相关等等
-      {text: 'git', link: '/guide/'},
-      {text: '命令行', link: '/guide/'},
-      {text: '编程规范', link: '/guide/'},
-      {text: '踩坑记录', link: '/guide/'},
-    ],
+    text:'软件工具',
+    items:[
+      { text: 'WebStorm 配置', link: '/efficiency/software/webstorm' }
+    ]
   },
-  /**
-   * 开发提效工具
-   * 更新日志
-   * */
   {
     text: '专题进阶',
     items: [
-      {text: 'examples', link: '/examples/'},
-      {text: 'guide', link: '/guide/'},
+      {text: 'NodeJs', link: '/examples/'},
+      {text: 'TypeScript', link: '/guide/'},
+      {text: '微信小程序', link: '/guide/'},
+      {text: '前端工程化', link: '/guide/'},
     ],
   },
   {
@@ -49,11 +65,11 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
   },
   {
-    text: 'examples',
+    text: '察哈尔国',
     items: [
-      {text: 'api', link: '/examples/getting-started'},
-      {text: 'what', link: '/guide/what-is-vitepress'},
-      {text: 'baidu', link: 'http://www.baidu.com'},
-    ],
-  },
+      { text: '个人主页', link: 'https://fe-mm.com' },
+      //个人项目
+      // { text: 'mmPlayer', link: 'https://netease-music.fe-mm.com' },
+    ]
+  }
 ]

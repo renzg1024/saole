@@ -6,9 +6,9 @@ layoutClass: 'm-home-layout'
 hero:
   name: '察哈尔国'
   text: '前端开发技术，个人思想感悟'
-  tagline: 柳比歇夫时间统计法，费曼学习法推崇者
+  tagline: 提升自我认知与觉知，自律自控，探寻且塑造自我。
   image:
-    src: /zjk.png
+    src: /images/ninja_turtles_PNG65.png
     alt: 前端志行
   actions:
     - text: 前端笔记

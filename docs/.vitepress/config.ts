@@ -17,7 +17,7 @@ export default defineConfig({
   },
   /* 主题配置 */
   themeConfig: {
-    logo: '/horse-logo.png',
+    logo: '/ninja_turtles60px.png',
     nav,
     sidebar,
     /* 右侧大纲配置 */

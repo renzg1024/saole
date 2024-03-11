@@ -41,43 +41,24 @@
       ]
     }
   ],
-  "/examples/": [
-    {
-      "text": "Examples",
-      "items": [
-        {
-          "text": "Index",
-          "link": "/examples/"
-        },
-        {
-          "text": "api",
-          "link": "/examples/api-examples"
-        },
-        {
-          "text": "markdown",
-          "link": "/examples/markdown-examples"
-        }
-      ]
-    }
-  ],
   "/mindGrowUp/understandNotes/": [
     {
       "text": "2023年",
       "items": [
         {
-          "text": "1月-每月核心表达",
+          "text": "2023年1月",
           "link": "/mindGrowUp/understandNotes/year-2023/January"
         },
         {
-          "text": "2月-每月核心表达",
+          "text": "2023年2月",
           "link": "/mindGrowUp/understandNotes/year-2023/February"
         },
         {
-          "text": "3月-每月核心表达",
+          "text": "2023年3月",
           "link": "/mindGrowUp/understandNotes/year-2023/March"
         },
         {
-          "text": "4月-每月核心表达",
+          "text": "2023年4月",
           "link": "/mindGrowUp/understandNotes/year-2023/April"
         }
       ]
