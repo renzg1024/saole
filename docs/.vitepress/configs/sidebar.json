@@ -41,8 +41,47 @@
       ]
     }
   ],
+  "/frontEndBasic/css/": [
+    {
+      "text": "Css基础语法",
+      "link": "/frontEndBasic/css/"
+    },
+    {
+      "text": "引入字体样式",
+      "link": "/frontEndBasic/css/font-face"
+    },
+    {
+      "text": "what",
+      "link": "/zhiguo/what-is-vitepress"
+    }
+  ],
+  "/workFunctional/npmLibrary/": [
+    {
+      "text": "目录",
+      "link": "/workFunctional/npmLibrary/"
+    },
+    {
+      "text": "NProgress进度条",
+      "link": "/workFunctional/npmLibrary/NProgress"
+    },
+    {
+      "text": "小程序直播相关",
+      "link": "/zhiguo/what-is-vitepress"
+    }
+  ],
+  "/workFunctional/commandLine/": [
+    {
+      "text": "命令行",
+      "link": "/workFunctional/commandLine/"
+    },
+    {
+      "text": "npm script详解",
+      "link": "/workFunctional/commandLine/npmScript"
+    }
+  ],
   "/mindGrowUp/understandNotes/": [
     {
+      "key": "2023年",
       "text": "2023年",
       "items": [
         {
@@ -64,6 +103,7 @@
       ]
     },
     {
+      "key": "2024年",
       "text": "2024年",
       "items": [
         {

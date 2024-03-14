@@ -7,7 +7,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     items: [
       {text: 'TypeScript', link: '/frontEndBasic/typeScript/'},
       {text: 'Html', link: '/frontEndBasic/html'},
-      {text: 'CSS', link: '/frontEndBasic/css'},
+      {text: 'CSS', link: '/frontEndBasic/css/'},
       {text: 'JavaScript', link: '/frontEndBasic/javaScript'},
       {text: 'ES6', link: '/frontEndBasic/es6'},
       {text: '编程逻辑算法题', link: '/frontEndBasic/coding'},
@@ -19,11 +19,11 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '工作中实用',
     items: [
       {
-        text: 'JS功能库',
+        text: '前端工具库',
         items: [
-          { text: 'npm功能库', link: '/workflow/utils/library' },
-          { text: '正则', link: '/workflow/utils/regexp' },
-          { text: '工具函数', link: '/workflow/utils/function' }
+          { text: 'npm功能库', link: '/workFunctional/npmLibrary/' },
+          { text: '正则', link: '/workFunctional/js/regexp' },
+          { text: '工具函数', link: '/workFunctional/js/function' }
         ]
       },
       {
@@ -36,8 +36,9 @@ export const nav: DefaultTheme.Config['nav'] = [
       },
       {text: 'Vue开发技巧', link: '/guide/'},
       {text: 'git', link: '/guide/'},
-      {text: '命令行', link: '/guide/'}, //npm命令nvm pnpm 相关等等
+      {text: '命令行', link: '/workFunctional/commandLine/'}, //npm命令nvm pnpm 相关等等
       {text: '编程规范', link: '/guide/'},
+      {text: 'markdown语法', link: '/workFunctional/markdown/'},
       {text: '踩坑记录 issue ', link: '/guide/'},
     ],
   },
