@@ -81,23 +81,27 @@
   ],
   "/mindGrowUp/understandNotes/": [
     {
+      "text": "目录索引",
+      "link": "/mindGrowUp/understandNotes/index"
+    },
+    {
       "key": "2023年",
       "text": "2023年",
       "items": [
         {
-          "text": "2023年1月",
+          "text": "1月-饮冰十年，难凉热血",
           "link": "/mindGrowUp/understandNotes/year-2023/January"
         },
         {
-          "text": "2023年2月",
+          "text": "2月-沉着理智",
           "link": "/mindGrowUp/understandNotes/year-2023/February"
         },
         {
-          "text": "2023年3月",
+          "text": "3月-不虚此行",
           "link": "/mindGrowUp/understandNotes/year-2023/March"
         },
         {
-          "text": "2023年4月",
+          "text": "4月-自律自控",
           "link": "/mindGrowUp/understandNotes/year-2023/April"
         }
       ]
@@ -107,8 +111,8 @@
       "text": "2024年",
       "items": [
         {
-          "text": "1月-每月核心表达",
-          "link": "/examples/"
+          "text": "3月-日拱一卒，功不唐捐",
+          "link": "/mindGrowUp/understandNotes/year-2024/March"
         }
       ]
     }
