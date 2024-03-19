@@ -55,6 +55,32 @@
       "link": "/zhiguo/what-is-vitepress"
     }
   ],
+  "/frontEndBasic/typeScript/": [
+    {
+      "text": "TypeScript 概念",
+      "link": "/frontEndBasic/typeScript/"
+    },
+    {
+      "text": "基础类型",
+      "link": "/frontEndBasic/typeScript/basicType"
+    },
+    {
+      "text": "泛型",
+      "link": "/frontEndBasic/typeScript/generics"
+    },
+    {
+      "text": "内置工具类型",
+      "link": "/frontEndBasic/typeScript/generics"
+    },
+    {
+      "text": "编译配置",
+      "link": "/frontEndBasic/typeScript/generics"
+    },
+    {
+      "text": "类型体操",
+      "link": "/frontEndBasic/typeScript/generics"
+    }
+  ],
   "/workFunctional/npmLibrary/": [
     {
       "text": "目录",
