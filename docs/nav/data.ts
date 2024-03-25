@@ -263,6 +263,12 @@ export const NAV_DATA: NavData[] = [
         desc: 'Vue3 的 Hooks',
         link: 'https://inhiblab-core.gitee.io/docs/hooks/',
       },
+      {
+        icon: 'https://varlet.gitee.io/varlet-ui/varlet_icon.png',
+        title: 'VARLET',
+        desc: '基于 Vue3 开发的 Material 风格移动端组件库',
+        link: 'https://varlet.gitee.io/varlet-ui/#/zh-CN/index',
+      },
     ],
   },
   {
@@ -535,31 +541,6 @@ export const NAV_DATA: NavData[] = [
     ],
   },
   {
-    title: 'AI 导航',
-    items: [
-      {
-        icon: '/icons/chatgpt.png',
-        title: 'ChatGPT（最强）',
-        link: 'https://chat.openai.com/chat',
-      },
-      {
-        icon: 'https://www.notion.so/images/logo-ios.png',
-        title: 'Notion AI（笔记）',
-        link: 'https://www.notion.so',
-      },
-      {
-        icon: 'https://www.midjourney.com/apple-touch-icon.png',
-        title: 'Midjourney（绘画）',
-        link: 'https://www.midjourney.com',
-      },
-      {
-        icon: 'https://global-uploads.webflow.com/59deb588800ae30001ec19c9/5d4891e0e260e3c1bc37b100_beautiful%20ai%20favicon%20%20blue%20square.png',
-        title: 'Beautiful.ai（PPT）',
-        link: 'https://www.beautiful.ai',
-      },
-    ],
-  },
-  {
     title: '图标库',
     items: [
       {
@@ -580,6 +561,26 @@ export const NAV_DATA: NavData[] = [
         desc: 'Emoji 表情大全',
         link: '',
       },
+    ],
+  },
+  {
+    title: '优质博客',
+    items: [
+      {
+        title: '茂茂物语',
+        desc: '',
+        link: 'https://notes.fe-mm.com/',
+      },
+      {
+        title: '书栈网',
+        desc: '',
+        link: 'https://www.bookstack.cn/',
+      },
+      {
+        title: '王垠博客',
+        desc: '',
+        link: 'https://www.yinwang.org/#',
+      }
     ],
   },
   {

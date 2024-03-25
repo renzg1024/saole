@@ -29,7 +29,7 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: 'CSS实用集',
         items: [
-          { text: '常用技巧', link: '/workflow/css/spec' },
+          { text: '常用技巧', link: '/workFunctional/css/oftenUseStyle' },
           { text: '特效/动画', link: '/workflow/css/tricks' },
           { text: 'Sass', link: '/workflow/sass/' }
         ]
@@ -39,7 +39,7 @@ export const nav: DefaultTheme.Config['nav'] = [
       {text: '命令行', link: '/workFunctional/commandLine/'}, //npm命令nvm pnpm 相关等等
       {text: '编程规范', link: '/guide/'},
       {text: 'markdown语法', link: '/workFunctional/markdown/'},
-      {text: '踩坑记录 issue ', link: '/guide/'},
+      {text: '踩坑记录 issue ', link: '/guide/issue'},
     ],
   },
   {

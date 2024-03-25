@@ -57,11 +57,15 @@
   ],
   "/frontEndBasic/typeScript/": [
     {
-      "text": "TypeScript 概念",
+      "text": "目录导航",
       "link": "/frontEndBasic/typeScript/"
     },
     {
-      "text": "基础类型",
+      "text": "概念",
+      "link": "/frontEndBasic/typeScript/introduce"
+    },
+    {
+      "text": "类型",
       "link": "/frontEndBasic/typeScript/basicType"
     },
     {
@@ -74,7 +78,7 @@
     },
     {
       "text": "编译配置",
-      "link": "/frontEndBasic/typeScript/generics"
+      "link": "/frontEndBasic/typeScript/config"
     },
     {
       "text": "类型体操",
@@ -93,6 +97,16 @@
     {
       "text": "小程序直播相关",
       "link": "/zhiguo/what-is-vitepress"
+    }
+  ],
+  "/workFunctional/css/": [
+    {
+      "text": "目录",
+      "link": "/workFunctional/css/"
+    },
+    {
+      "text": "常用的CSS样式集合",
+      "link": "/workFunctional/css/oftenUseStyle"
     }
   ],
   "/workFunctional/commandLine/": [
