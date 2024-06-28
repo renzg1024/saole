@@ -1,0 +1,36 @@
+{
+  "/workFunctional/npmLibrary/": [
+    {
+      "text": "目录",
+      "link": "/workFunctional/npmLibrary/"
+    },
+    {
+      "text": "NProgress进度条",
+      "link": "/workFunctional/npmLibrary/NProgress"
+    },
+    {
+      "text": "小程序直播相关",
+      "link": "/zhiguo/what-is-vitepress"
+    }
+  ],
+  "/workFunctional/css/": [
+    {
+      "text": "目录",
+      "link": "/workFunctional/css/"
+    },
+    {
+      "text": "常用的CSS样式集合",
+      "link": "/workFunctional/css/oftenUseStyle"
+    }
+  ],
+  "/workFunctional/commandLine/": [
+    {
+      "text": "命令行",
+      "link": "/workFunctional/commandLine/"
+    },
+    {
+      "text": "npm script详解",
+      "link": "/workFunctional/commandLine/npmScript"
+    }
+  ]
+}

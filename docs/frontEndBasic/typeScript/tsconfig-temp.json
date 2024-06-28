@@ -138,5 +138,7 @@
   "include": [],
   "exclude": [],
   "files": [],
+  "references": [{ "path": "./tsconfig.node.json" }] //为文件进行不同配置
+  /*是 TypeScript 3.0 新增的 “项目引用（Project References）” 功能，它允许用户为项目的不同部分使用不同的 TypeScript 配置。*/
 
 }

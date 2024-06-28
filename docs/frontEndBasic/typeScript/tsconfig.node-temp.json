@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["vite.config.ts"],
+  /*说明 tscnofig.node.json 是专门用于 vite.config.ts 这一文件的 TypeScript 配置文件。*/
+}

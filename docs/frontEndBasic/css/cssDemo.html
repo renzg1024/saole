@@ -4,34 +4,263 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <style type="text/css">
-    *{
+    * {
       margin: 0;
       padding: 0;
     }
-    div{
-      width: 200px;
-      height: 200px;
+
+    .border-box {
       border: 1px solid;
+      margin-bottom: 20px;
     }
-    span{
+
+    span {
       margin: 10px;
       padding: 10px;
       border: 1px solid #00a0f4;
     }
 
+    .em-parent {
+      font-size: 20px;
+    }
+
+    .em-child {
+      font-size: 1em;
+      width: 4em;
+      border: 1px solid;
+    }
+
+
+    .arrow-wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /*三角形/箭头*/
+    .traingle-top {
+      width: 0;
+      height: 0;
+      border-width: 0 40px 40px;
+      border-style: solid;
+      border-color: transparent transparent red;
+    }
+
+    .traingle-bottom {
+      width: 0;
+      height: 0;
+      border-width: 40px 40px 0;
+      border-style: solid;
+      border-color: blue transparent transparent;
+    }
+
+    .traingle-left {
+      width: 0;
+      height: 0;
+      border-width: 40px 0 40px 40px;
+      border-style: solid;
+      border-color: transparent transparent transparent rebeccapurple;
+    }
+
+    .traingle-right {
+      width: 0;
+      height: 0;
+      border-width: 40px 40px 40px 0;
+      border-style: solid;
+      border-color: transparent green transparent transparent;
+    }
+
+
+    /*空心下箭头*/
+    .arrow-bottom {
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+    }
+
+    /*空心上箭头*/
+    .arrow-top {
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+    }
+
+    /*空心右箭头*/
+    .arrow-right {
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+      border-right: 1px solid #000;
+      border-top: 1px solid #000;
+    }
+
+    /*空心左箭头*/
+    .arrow-left {
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+
+    .rect {
+      width: 100px;
+      height: 50px;
+      border: 1px solid #333;
+      margin: 20px;
+      position: relative;
+      border-radius: 4px;
+    }
+
+    .arrow-border-top {
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border-width: 0 10px 10px;
+      border-style: solid;
+      border-color: transparent transparent #333;
+    }
+
+    .arrow-border-top:after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: -8px;
+      border-width: 0 8px 8px;
+      border-style: solid;
+      border-color: transparent transparent #fff;
+    }
+
+    .rectangle-with-arrow {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      background-color: #f0f0f0;
+      border: 2px solid #333;
+      margin: 50px;
+    }
+
+    .rectangle-with-arrow::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -20px; /* Adjust this value to move the arrow left/right */
+      margin-top: -10px; /* Move the arrow up/down */
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent transparent #333;
+    }
+
+
+    .prod-tips {
+      font-size: 24px;
+      color: #4C4024;
+      padding: 4px 16px;
+      line-height: initial;
+      background: linear-gradient(0deg, #FFF 0%, #FFF9F1 100%);
+      border: 2px solid #333;
+      position: relative;
+      margin-top: 10px;
+      float: right;
+      border-radius: 8px;
+    }
+    .tip-arrow {
+       position: absolute;
+       top: -30px;
+       right: 50px;
+     }
+
+    /*空心上箭头*/
+    .tip-arrow::before {
+       content: '';
+       display: inline-block;
+       width: 19px;
+       height: 19px;
+       transform: rotate(45deg);
+       border-top: 2px solid #333;
+       border-left: 2px solid #333;
+       position: absolute;
+       right: 25px;
+       top: 19px;
+     }
+
+    /*实心上箭头  #FFF9F1*/
+    .tip-arrow::after {
+       content: '';
+       display: inline-block;
+       width: 0;
+       height: 0;
+       border-style: solid;
+       border-width: 0 18px 18px 18px;
+       position: absolute;
+       right: 18px;
+       top: 19px;
+       border-color: transparent transparent #FFF9F1 transparent;
+     }
 
   </style>
 </head>
 
 <body>
 
-<div>
+<div class="border-box">
   <span>111111</span>
   <span>222222</span>
   <span>33333</span>
   <span>655555</span>
   <p>ppppppp</p>
   <span>444444</span>
+</div>
+
+
+<!--值与单位-->
+<div class="em-parent border-box">
+  父元素
+  <p class="em-child">
+    子元素
+  </p>
+</div>
+
+<!--各种箭头/三角形-->
+<div class="arrow-wrap border-box">
+
+  <div>
+    <h3>三角</h3>
+    <div class="traingle-top"></div>
+    <div class="traingle-bottom"></div>
+    <div class="traingle-left"></div>
+    <div class="traingle-right"></div>
+  </div>
+
+  <div>
+    <h3>箭头</h3>
+    <p class="arrow-top"></p>
+    <p class="arrow-bottom"></p>
+    <p class="arrow-left"></p>
+    <p class="arrow-right"></p>
+  </div>
+
+  <div>
+    <h3>边框箭头</h3>
+
+    <div class="rect">
+      <div class="arrow-border-top"></div>
+    </div>
+
+    <div class="rectangle-with-arrow"></div>
+
+    <div class="prod-tips">
+      <div class="tip-arrow"></div>
+    </div>
+
+  </div>
+
+
 </div>
 
 </body>
