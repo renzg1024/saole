@@ -580,6 +580,11 @@ export const NAV_DATA: NavData[] = [
         title: '王垠博客',
         desc: '',
         link: 'https://www.yinwang.org/#',
+      },
+      {
+        title: '太空编程',
+        desc: '',
+        link: 'https://spacexcode.com/',
       }
     ],
   },
