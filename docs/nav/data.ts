@@ -563,7 +563,7 @@ export const NAV_DATA: NavData[] = [
       },
     ],
   },
-  {
+/*  {
     title: '优质博客',
     items: [
       {
@@ -587,7 +587,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://spacexcode.com/',
       }
     ],
-  },
+  },*/
   {
     title: '休闲放松',
     items: [
