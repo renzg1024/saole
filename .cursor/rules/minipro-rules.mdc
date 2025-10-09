@@ -1,0 +1,882 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 微信小程序 TypeScript + SCSS 原生开发 Project Rules
+
+## 项目基础配置
+
+### 技术栈声明
+- **平台**: 微信小程序原生开发
+- **语言**: TypeScript
+- **框架**: 微信小程序原生框架
+- **UI组件**: WeUI + 自定义组件
+- **构建工具**: 微信开发者工具
+- **样式语言**: SCSS
+
+### 项目结构规范
+```
+miniprogram/
+├── app.ts              # 小程序入口文件
+├── app.json            # 全局配置
+├── app.scss            # 全局样式
+├── project.config.json # 项目配置
+├── tsconfig.json       # TypeScript 配置
+├── sitemap.json        # 搜索配置
+├── typings/            # 类型定义文件
+│   ├── index.d.ts      # 全局类型定义
+│   └── wx/             # 微信 API 类型定义
+├── pages/              # 页面目录
+│   ├── index/          # 首页
+│   │   ├── index.ts
+│   │   ├── index.json
+│   │   ├── index.wxml
+│   │   └── index.scss
+│   └── [pageName]/     # 其他页面
+├── components/         # 自定义组件
+│   └── [componentName]/
+│       ├── index.ts
+│       ├── index.json
+│       ├── index.wxml
+│       └── index.scss
+├── utils/              # 工具函数
+│   ├── index.ts
+│   ├── request.ts      # 网络请求封装
+│   ├── storage.ts      # 本地存储封装
+│   └── common.ts       # 通用工具函数
+├── services/           # API 服务
+├── constants/          # 常量定义
+├── types/              # 业务类型定义
+├── styles/             # 公共样式
+│   ├── _variables.scss # SCSS 变量
+│   ├── _mixins.scss    # SCSS 混入
+│   ├── _base.scss      # 基础样式
+│   └── _components.scss# 组件样式
+└── assets/             # 静态资源
+    ├── images/         # 图片资源
+    └── icons/          # 图标资源
+```
+
+## TypeScript 配置要求
+
+### tsconfig.json 配置
+```json
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "lib": ["ES2018"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "typeRoots": ["./typings"]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+```
+
+### 全局类型定义
+```typescript
+// typings/index.d.ts
+declare namespace WechatMiniprogram {
+  interface App {
+    globalData: {
+      userInfo?: any;
+      systemInfo?: any;
+    }
+  }
+  
+  interface Page {
+    data: any;
+    setData: (data: Partial<any>) => void;
+  }
+}
+
+// 业务相关类型
+interface ApiResponse<T = any> {
+  code: number;
+  message: string;
+  data: T;
+}
+
+interface UserInfo {
+  id: number;
+  nickname: string;
+  avatar: string;
+}
+```
+
+## 页面开发规范
+
+### 页面 TypeScript 文件模板
+```typescript
+// pages/example/index.ts
+
+interface PageData {
+  title: string;
+  loading: boolean;
+  list: any[];
+  userInfo: UserInfo | null;
+}
+
+interface PageOptions {
+  id?: string;
+  [key: string]: any;
+}
+
+Page<PageData, PageOptions>({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    title: '',
+    loading: false,
+    list: [],
+    userInfo: null
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options: PageOptions): void {
+    console.log('页面加载', options);
+    this.initPage();
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady(): void {
+    // 页面初次渲染完成
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow(): void {
+    // 页面显示时执行
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide(): void {
+    // 页面隐藏时执行
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload(): void {
+    // 页面卸载时执行，清理资源
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh(): void {
+    this.refreshData();
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom(): void {
+    this.loadMoreData();
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage(): WechatMiniprogram.Page.IShareAppMessageOption {
+    return {
+      title: this.data.title,
+      path: `/pages/example/index`
+    };
+  },
+
+  /**
+   * 初始化页面
+   */
+  async initPage(): Promise<void> {
+    try {
+      this.setData({ loading: true });
+      await this.fetchData();
+    } catch (error) {
+      console.error('页面初始化失败:', error);
+      wx.showToast({
+        title: '加载失败',
+        icon: 'error'
+      });
+    } finally {
+      this.setData({ loading: false });
+    }
+  },
+
+  /**
+   * 获取数据
+   */
+  async fetchData(): Promise<void> {
+    // API 调用逻辑
+  },
+
+  /**
+   * 刷新数据
+   */
+  async refreshData(): Promise<void> {
+    await this.fetchData();
+    wx.stopPullDownRefresh();
+  },
+
+  /**
+   * 加载更多数据
+   */
+  async loadMoreData(): Promise<void> {
+    // 分页加载逻辑
+  },
+
+  /**
+   * 处理点击事件
+   */
+  handleItemTap(event: WechatMiniprogram.BaseEvent): void {
+    const { dataset } = event.currentTarget;
+    const { id } = dataset;
+    
+    wx.navigateTo({
+      url: `/pages/detail/index?id=${id}`
+    });
+  }
+});
+```
+
+### WXML 模板规范
+```xml
+<!-- pages/example/index.wxml -->
+<view class="page">
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 页面内容 -->
+  <view class="content" wx:else>
+    <!-- 头部 -->
+    <view class="header">
+      <text class="title">{{title}}</text>
+    </view>
+
+    <!-- 列表 -->
+    <scroll-view 
+      class="list-container" 
+      scroll-y="{{true}}"
+      enable-back-to-top="{{true}}"
+    >
+      <view 
+        class="list-item" 
+        wx:for="{{list}}" 
+        wx:key="id"
+        data-id="{{item.id}}"
+        bind:tap="handleItemTap"
+      >
+        <text class="item-title">{{item.title}}</text>
+        <text class="item-desc">{{item.description}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:if="{{!loading && list.length === 0}}">
+    <text>暂无数据</text>
+  </view>
+</view>
+```
+
+## SCSS 样式规范
+
+### 全局变量定义
+```scss
+// styles/_variables.scss
+
+// 颜色变量
+$primary-color: #07c160;
+$secondary-color: #576b95;
+$success-color: #07c160;
+$warning-color: #ff976a;
+$error-color: #ee0a24;
+$info-color: #1989fa;
+
+// 文字颜色
+$text-primary: #323233;
+$text-secondary: #646566;
+$text-placeholder: #c8c9cc;
+
+// 背景颜色
+$bg-primary: #ffffff;
+$bg-secondary: #f7f8fa;
+$bg-disabled: #f5f5f5;
+
+// 边框颜色
+$border-color: #ebedf0;
+$border-light: #f0f1f5;
+
+// 尺寸变量
+$border-radius-sm: 4rpx;
+$border-radius-md: 12rpx;
+$border-radius-lg: 16rpx;
+
+// 间距变量
+$spacing-xs: 16rpx;
+$spacing-sm: 24rpx;
+$spacing-md: 32rpx;
+$spacing-lg: 48rpx;
+$spacing-xl: 64rpx;
+
+// 字体大小
+$font-size-xs: 20rpx;
+$font-size-sm: 24rpx;
+$font-size-md: 28rpx;
+$font-size-lg: 32rpx;
+$font-size-xl: 36rpx;
+```
+
+### 通用混入
+```scss
+// styles/_mixins.scss
+
+// 水平垂直居中
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 单行文本省略
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文本省略
+@mixin ellipsis-lines($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// 清除浮动
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// 响应式字体
+@mixin responsive-font($min-size, $max-size) {
+  font-size: calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - 320px) / (750 - 320)));
+}
+
+// 按钮样式
+@mixin button-style($bg-color, $text-color: #fff) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius-md;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-md;
+  
+  &:active {
+    opacity: 0.8;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+```
+
+### 页面样式示例
+```scss
+// pages/example/index.scss
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.page {
+  min-height: 100vh;
+  background-color: $bg-secondary;
+}
+
+.loading {
+  @include center;
+  height: 200rpx;
+  color: $text-secondary;
+}
+
+.content {
+  padding: $spacing-md;
+}
+
+.header {
+  margin-bottom: $spacing-lg;
+  
+  .title {
+    font-size: $font-size-xl;
+    font-weight: bold;
+    color: $text-primary;
+  }
+}
+
+.list-container {
+  height: calc(100vh - 200rpx);
+}
+
+.list-item {
+  background-color: $bg-primary;
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-sm;
+  border: 1px solid $border-color;
+  
+  &:active {
+    background-color: $bg-disabled;
+  }
+  
+  .item-title {
+    display: block;
+    font-size: $font-size-lg;
+    color: $text-primary;
+    margin-bottom: $spacing-xs;
+    @include ellipsis;
+  }
+  
+  .item-desc {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    @include ellipsis-lines(2);
+  }
+}
+
+.empty {
+  @include center;
+  height: 300rpx;
+  color: $text-placeholder;
+  font-size: $font-size-md;
+}
+```
+
+## 组件开发规范
+
+### 自定义组件模板
+```typescript
+// components/custom-button/index.ts
+
+interface ComponentData {
+  innerText: string;
+}
+
+interface ComponentProperties {
+  text: string;
+  type: 'primary' | 'secondary' | 'danger';
+  disabled: boolean;
+  size: 'small' | 'medium' | 'large';
+}
+
+interface ComponentMethods {
+  handleTap(): void;
+}
+
+Component<ComponentData, ComponentProperties, ComponentMethods>({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    text: {
+      type: String,
+      value: ''
+    },
+    type: {
+      type: String,
+      value: 'primary'
+    },
+    disabled: {
+      type: Boolean,
+      value: false
+    },
+    size: {
+      type: String,
+      value: 'medium'
+    }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    innerText: ''
+  },
+
+  /**
+   * 组件生命周期
+   */
+  lifetimes: {
+    attached(): void {
+      // 组件实例进入页面节点树时执行
+      this.setData({
+        innerText: this.data.text || '按钮'
+      });
+    },
+
+    detached(): void {
+      // 组件实例被从页面节点树移除时执行
+    }
+  },
+
+  /**
+   * 组件方法
+   */
+  methods: {
+    handleTap(): void {
+      if (this.data.disabled) return;
+      
+      this.triggerEvent('tap', {
+        type: this.data.type
+      });
+    }
+  }
+});
+```
+
+## API 服务封装
+
+### 网络请求封装
+```typescript
+// utils/request.ts
+
+interface RequestOptions {
+  url: string;
+  method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  data?: any;
+  header?: Record<string, string>;
+}
+
+interface RequestResponse<T = any> {
+  data: T;
+  statusCode: number;
+  header: Record<string, string>;
+}
+
+class Request {
+  private baseURL: string = 'https://api.example.com';
+  private timeout: number = 10000;
+
+  /**
+   * 发起请求
+   */
+  async request<T = any>(options: RequestOptions): Promise<ApiResponse<T>> {
+    const { url, method = 'GET', data, header = {} } = options;
+
+    // 添加通用请求头
+    const commonHeader = {
+      'Content-Type': 'application/json',
+      ...header
+    };
+
+    // 添加 token
+    const token = wx.getStorageSync('token');
+    if (token) {
+      commonHeader['Authorization'] = `Bearer ${token}`;
+    }
+
+    try {
+      const response: RequestResponse<ApiResponse<T>> = await new Promise((resolve, reject) => {
+        wx.request({
+          url: this.baseURL + url,
+          method,
+          data,
+          header: commonHeader,
+          timeout: this.timeout,
+          success: resolve,
+          fail: reject
+        });
+      });
+
+      const { data: responseData, statusCode } = response;
+
+      if (statusCode >= 200 && statusCode < 300) {
+        return responseData;
+      } else {
+        throw new Error(`请求失败: ${statusCode}`);
+      }
+    } catch (error) {
+      console.error('请求错误:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * GET 请求
+   */
+  get<T = any>(url: string, data?: any): Promise<ApiResponse<T>> {
+    return this.request<T>({ url, method: 'GET', data });
+  }
+
+  /**
+   * POST 请求
+   */
+  post<T = any>(url: string, data?: any): Promise<ApiResponse<T>> {
+    return this.request<T>({ url, method: 'POST', data });
+  }
+
+  /**
+   * PUT 请求
+   */
+  put<T = any>(url: string, data?: any): Promise<ApiResponse<T>> {
+    return this.request<T>({ url, method: 'PUT', data });
+  }
+
+  /**
+   * DELETE 请求
+   */
+  delete<T = any>(url: string, data?: any): Promise<ApiResponse<T>> {
+    return this.request<T>({ url, method: 'DELETE', data });
+  }
+}
+
+export const request = new Request();
+```
+
+### API 服务示例
+```typescript
+// services/user.ts
+import { request } from '../utils/request';
+
+export interface User {
+  id: number;
+  nickname: string;
+  avatar: string;
+  phone: string;
+}
+
+export class UserService {
+  /**
+   * 获取用户信息
+   */
+  static async getUserInfo(id: number): Promise<User> {
+    const response = await request.get<User>(`/user/${id}`);
+    return response.data;
+  }
+
+  /**
+   * 更新用户信息
+   */
+  static async updateUserInfo(data: Partial<User>): Promise<User> {
+    const response = await request.put<User>('/user/profile', data);
+    return response.data;
+  }
+
+  /**
+   * 获取用户列表
+   */
+  static async getUserList(params: {
+    page: number;
+    pageSize: number;
+  }): Promise<{ list: User[]; total: number }> {
+    const response = await request.get<{ list: User[]; total: number }>('/user/list', params);
+    return response.data;
+  }
+}
+```
+
+## 工具函数规范
+
+### 通用工具函数
+```typescript
+// utils/common.ts
+
+/**
+ * 格式化日期
+ */
+export function formatDate(date: Date | string | number, format: string = 'YYYY-MM-DD'): string {
+  const d = new Date(date);
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  const hour = String(d.getHours()).padStart(2, '0');
+  const minute = String(d.getMinutes()).padStart(2, '0');
+  const second = String(d.getSeconds()).padStart(2, '0');
+
+  return format
+    .replace('YYYY', String(year))
+    .replace('MM', month)
+    .replace('DD', day)
+    .replace('HH', hour)
+    .replace('mm', minute)
+    .replace('ss', second);
+}
+
+/**
+ * 防抖函数
+ */
+export function debounce<T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): (...args: Parameters<T>) => void {
+  let timeout: number | null = null;
+  
+  return function (...args: Parameters<T>) {
+    if (timeout !== null) {
+      clearTimeout(timeout);
+    }
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+/**
+ * 节流函数
+ */
+export function throttle<T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): (...args: Parameters<T>) => void {
+  let previous = 0;
+  
+  return function (...args: Parameters<T>) {
+    const now = Date.now();
+    if (now - previous > wait) {
+      func.apply(this, args);
+      previous = now;
+    }
+  };
+}
+
+/**
+ * 深拷贝
+ */
+export function deepClone<T>(obj: T): T {
+  if (obj === null || typeof obj !== 'object') {
+    return obj;
+  }
+  
+  if (obj instanceof Date) {
+    return new Date(obj.getTime()) as unknown as T;
+  }
+  
+  if (obj instanceof Array) {
+    return obj.map(item => deepClone(item)) as unknown as T;
+  }
+  
+  if (typeof obj === 'object') {
+    const clonedObj = {} as T;
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        clonedObj[key] = deepClone(obj[key]);
+      }
+    }
+    return clonedObj;
+  }
+  
+  return obj;
+}
+```
+
+## 性能优化要求
+
+### 代码优化
+- 使用 `wx:if` 而不是 `hidden` 来控制元素显示/隐藏
+- 长列表使用虚拟滚动或分页加载
+- 图片懒加载和压缩
+- 合理使用 `setData`，避免频繁调用
+- 及时清理定时器和事件监听器
+
+### 资源优化
+- 图片使用 WebP 格式
+- 压缩和优化图片大小
+- 合理使用缓存策略
+- 分包加载优化
+
+## 错误处理规范
+
+### 全局错误处理
+```typescript
+// app.ts
+App<IAppOption>({
+  globalData: {
+    userInfo: null,
+    systemInfo: null
+  },
+
+  onLaunch(): void {
+    // 全局错误监听
+    wx.onError((error) => {
+      console.error('小程序错误:', error);
+      // 上报错误日志
+    });
+
+    // 未处理的 Promise 拒绝
+    wx.onUnhandledRejection((res) => {
+      console.error('未处理的 Promise 错误:', res);
+      // 上报错误日志
+    });
+  },
+
+  onShow(): void {
+    // 小程序启动或从后台进入前台时触发
+  },
+
+  onHide(): void {
+    // 小程序从前台进入后台时触发
+  }
+});
+```
+
+## 代码生成指导
+
+### 当我说"创建页面"时
+- 生成完整的四个文件（.ts, .wxml, .scss, .json）
+- 包含完整的 TypeScript 类型定义
+- 使用 SCSS 变量和混入
+- 添加常用的生命周期函数和事件处理
+
+### 当我说"创建组件"时
+- 生成自定义组件的四个文件
+- 包含 properties、data、methods 的完整结构
+- 提供类型安全的组件接口
+- 使用组件化的 SCSS 样式
+
+### 当我说"添加API"时
+- 在 services 目录下创建对应的服务文件
+- 使用封装的 request 工具
+- 提供完整的 TypeScript 类型定义
+- 包含错误处理逻辑
+
+### 当我说"优化性能"时
+- 检查 setData 使用是否合理
+- 优化列表渲染性能
+- 检查图片和资源使用
+- 提供缓存策略建议
+
+---
+
+**注意事项：**
+1. 所有代码必须符合 TypeScript 规范，提供完整类型定义
+2. SCSS 样式使用变量和混入，保持一致性
+3. 遵循微信小程序官方最佳实践
+4. 注重性能优化和用户体验
+5. 提供完整的错误处理机制

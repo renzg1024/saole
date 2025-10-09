@@ -1,0 +1,193 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+基础开发准则
+技术栈偏好
+
+优先使用 React + TypeScript 进行开发
+状态管理优先选择：Zustand > Redux Toolkit > Context API
+样式方案优先级：Tailwind CSS > Styled-components > CSS Modules
+构建工具偏好：Vite > Create React App > Webpack
+包管理器：pnpm > yarn > npm
+
+代码规范
+
+所有组件必须使用 TypeScript 编写，提供完整的类型定义
+函数组件优于类组件，使用 React Hooks
+组件命名使用 PascalCase，文件名与组件名保持一致
+自定义 Hook 以 use 开头命名
+常量使用 UPPER_SNAKE_CASE 命名
+变量和函数使用 camelCase 命名
+
+代码结构要求
+src/
+├── components/        # 可复用组件
+│   ├── ui/           # 基础 UI 组件
+│   └── common/       # 通用业务组件
+├── pages/            # 页面组件
+├── hooks/            # 自定义 Hooks
+├── utils/            # 工具函数
+├── types/            # TypeScript 类型定义
+├── stores/           # 状态管理
+├── services/         # API 服务
+└── constants/        # 常量定义
+组件开发规范
+React 组件模板
+typescriptinterface ComponentProps {
+  // 明确的 props 类型定义
+}
+
+const Component: React.FC<ComponentProps> = ({ 
+  // 解构 props
+}) => {
+  // hooks 在顶部
+  // 事件处理函数
+  // 渲染逻辑
+  
+  return (
+    // JSX 结构清晰，适当换行
+  );
+};
+
+export default Component;
+开发要求
+
+每个组件都要有清晰的 Props 接口定义
+复杂组件要拆分为更小的子组件
+使用 React.memo 优化不必要的重渲染
+事件处理函数使用 useCallback 优化
+副作用使用 useEffect，注意依赖项和清理函数
+
+样式开发规范
+Tailwind CSS 使用原则
+
+优先使用 Tailwind 原子类
+响应式设计：mobile-first 原则
+使用 Tailwind 的设计系统（spacing、colors、typography）
+复杂样式可以使用 @apply 指令
+避免内联样式，除非是动态值
+
+响应式设计
+
+移动端优先：默认样式为移动端
+断点使用：sm: md: lg: xl: 2xl:
+确保在所有设备上都有良好的用户体验
+
+性能优化要求
+代码分割
+
+路由级别的代码分割使用 React.lazy
+大型组件使用动态导入
+第三方库按需导入
+
+性能最佳实践
+
+图片使用现代格式（WebP、AVIF）并提供 fallback
+实现虚拟滚动处理大量数据
+使用 useMemo 缓存计算结果
+使用 useCallback 缓存函数引用
+避免在渲染函数中创建新对象或数组
+
+API 集成规范
+数据获取
+
+使用 React Query/TanStack Query 进行服务端状态管理
+API 调用封装在 services 目录下
+错误处理要完整，提供用户友好的错误信息
+加载状态要有适当的 loading UI
+
+HTTP 客户端
+
+使用 Axios 或 Fetch API
+统一的请求拦截器处理认证
+响应拦截器处理通用错误
+请求取消机制防止内存泄漏
+
+用户体验要求
+交互反馈
+
+所有用户操作都要有即时反馈
+加载状态使用 Skeleton 或 Spinner
+成功/错误操作要有 Toast 提示
+表单验证要实时且用户友好
+
+无障碍性 (A11y)
+
+语义化 HTML 结构
+适当的 ARIA 标签
+键盘导航支持
+色彩对比度符合 WCAG 标准
+
+测试要求
+测试覆盖
+
+使用 Jest + React Testing Library
+组件测试覆盖主要功能
+自定义 Hook 要有单元测试
+关键业务逻辑要有集成测试
+
+代码生成指导
+当我说"创建组件"时
+
+生成完整的 TypeScript React 组件
+包含 Props 接口定义
+使用 Tailwind CSS 样式
+添加基础测试文件
+
+当我说"添加功能"时
+
+分析现有代码结构
+遵循当前项目的代码风格
+确保类型安全
+考虑性能影响
+
+当我说"优化"时
+
+检查性能瓶颈
+代码分割机会
+减少重渲染
+改善用户体验
+
+当我说"修复bug"时
+
+仔细分析问题根因
+提供完整的解决方案
+考虑边界情况
+添加相应的测试
+
+特殊指令
+代码审查模式
+当我说"审查代码"时，请从以下维度分析：
+
+类型安全性
+性能问题
+可维护性
+最佳实践遵循
+潜在 bug
+
+重构建议
+当我说"重构"时，请提供：
+
+代码结构优化建议
+性能改进方案
+可读性提升
+维护性改善
+
+错误处理标准
+
+始终使用 Error Boundaries 包装组件
+API 错误要有降级处理
+用户输入验证要完整
+网络错误要有重试机制
+
+注释和文档要求
+
+复杂逻辑要有注释说明
+组件要有简洁的文档注释
+API 接口要有 JSDoc 注释
+重要的业务逻辑要有说明
+
+
+记住：代码质量和用户体验同等重要。始终从用户角度思考功能实现。

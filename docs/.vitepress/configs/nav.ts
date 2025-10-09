@@ -2,7 +2,7 @@ import type {DefaultTheme} from 'vitepress'
 
 export const nav: DefaultTheme.Config['nav'] = [
   {text: '前端导航', link: '/nav/'},
-  {
+/*  {
     text: '前端基础',
     items: [
       {text: 'TypeScript', link: '/frontEndBasic/typeScript/'},
@@ -14,7 +14,7 @@ export const nav: DefaultTheme.Config['nav'] = [
       {text: '浏览器网络相关', link: '/frontEndBasic/network'},
     ],
     activeMatch: '^/frontEndBasic'
-  },
+  },*/
   {
     text: '工作中实用',
     items: [
@@ -57,20 +57,20 @@ export const nav: DefaultTheme.Config['nav'] = [
       {text: '前端工程化', link: '/guide/'},
     ],
   },
-  {
+/*  {
     text: '心智成长',
     items: [
       {text: '思考感悟', link: '/mindGrowUp/understandNotes/'}, //数量多，日期，记录日常感悟，所思所想
       // 年分组，月为单位记录
       {text: '读书笔记', link: '/mindGrowUp/readNotes/'},
     ],
-  },
-  {
+  },*/
+/*  {
     text: '察哈尔国',
     items: [
       { text: '个人主页', link: 'https://fe-mm.com' },
       //个人项目
-      // { text: 'mmPlayer', link: 'https://netease-music.fe-mm.com' },
+      { text: 'mmPlayer', link: 'https://netease-music.fe-mm.com' },
     ]
-  }
+  }*/
 ]
